@@ -1,0 +1,14 @@
+.container {
+  margin-top: 100px;
+}
+
+.footer {
+  height: 250px;
+  background-color: black;
+}
+
+.footerImage {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: -250px;
+}
