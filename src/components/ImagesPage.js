@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from "react";
 import ImageCard from "./ImageCard";
-import { getRandomDate } from "../helpers/getRandomDate";
+import classes from "../styles/ImagesPage.module.css";
+import { getImagesData } from "../helpers/getImagesData";
 
 const ImagesPage = () => {
   const [data, setData] = useState([]);
 
-  const fetchData = async () => {
-    const data = await (
-      await fetch("https://picsum.photos/v2/list?limit=12")
-    ).json();
-    console.log(data);
-
-    const transformedData = data.map((item) => {
-      return { ...item, date: getRandomDate() };
-    });
-    setData(transformedData);
-  };
-
   useEffect(() => {
-    fetchData();
+    const getData = async () => {
+      const data = await getImagesData();
+      setData(data);
+    };
+    getData();
   }, []);
 
   return (
-    <div>
-      <ImageCard src={"https://picsum.photos/id/0/5616/3744"} />
+    <div className={classes.container}>
+      {data.map((item) => (
+        <div className={classes.item} key={item.id}>
+          <ImageCard src={item.download_url} alt={item.author} />
+        </div>
+      ))}
     </div>
   );
 };
