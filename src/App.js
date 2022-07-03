@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { useState } from "react";
 // import ImageCard from "./components/ImageCard";
 import ImagesPage from "./components/ImagesPage";
+import Modal from "./components/Modal";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -18,6 +19,7 @@ function App() {
       <Header loggedIn={loggedIn}>
         {loggedIn ? <ImagesPage /> : <Home formSubmit={formSubmitHandler} />}
       </Header>
+      <Modal />
     </div>
   );
 }
