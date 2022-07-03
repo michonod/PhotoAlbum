@@ -1,15 +1,13 @@
 import React from "react";
-import Footer from "./components/home/Footer";
-import Header from "./components/home/Header";
-import Main from "./components/home/Main";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
 
-const Home = () => {
+const Home = ({ formSubmit }) => {
   return (
-    <div>
-      <Header />
-      <Main />
+    <>
+      <Main formSubmit={formSubmit} />
       <Footer />
-    </div>
+    </>
   );
 };
 
