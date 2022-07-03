@@ -4,7 +4,7 @@ import Button from "./Button";
 import completeIcon from "../assets/svg/completeIcon.svg";
 
 const Modal = () => {
-  const buttonStyle = { border: "none", pointerEvents: "none" };
+  const buttonStyle = { border: "none", pointerEvents: "none", padding: "0px" };
   const [focused, setFocused] = useState(false);
 
   const focusHandler = () => setFocused(true);
@@ -29,8 +29,12 @@ const Modal = () => {
           />
         )}
         <div className={styles.buttonsBottom}>
-          <Button color="white">Cancel</Button>
-          <Button color="black">Save</Button>
+          <Button color="white" style={{ width: "140px" }}>
+            Cancel
+          </Button>
+          <Button color="black" style={{ width: "140px" }}>
+            Save
+          </Button>
         </div>
       </div>
     </div>

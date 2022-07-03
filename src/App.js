@@ -1,26 +1,23 @@
 import "./App.css";
 import Home from "./Home";
 import Header from "./components/Header";
-import { useState } from "react";
-// import ImageCard from "./components/ImageCard";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import ImagesPage from "./components/ImagesPage";
-import Modal from "./components/Modal";
+import ImageCard from "./components/ImageCard";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-    setLoggedIn(true);
-  };
-
   return (
-    <div className="App">
-      <Header loggedIn={loggedIn}>
-        {loggedIn ? <ImagesPage /> : <Home formSubmit={formSubmitHandler} />}
+    <>
+      <Header>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/images" element={<ImagesPage />} />
+            <Route path="/imageCard" element={<ImageCard />} />
+          </Routes>
+        </Router>
       </Header>
-      <Modal />
-    </div>
+    </>
   );
 }
 

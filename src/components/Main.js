@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Main.module.css";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Main = ({ formSubmit }) => {
   const buttonStyle = { width: " 140px", margin: " 40px auto" };
@@ -16,9 +17,11 @@ const Main = ({ formSubmit }) => {
         <input type="text" placeholder="Enter username here ..." />
         <label htmlFor="password">Password</label>
         <input type="password" placeholder="Enter password here ..." />
-        <Button type="submit" color="black" style={buttonStyle}>
-          Log in
-        </Button>
+        <Link to="/images">
+          <Button type="submit" color="black" style={buttonStyle}>
+            Log in
+          </Button>
+        </Link>
       </form>
     </div>
   );

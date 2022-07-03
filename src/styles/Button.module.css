@@ -5,6 +5,7 @@
   font-weight: 900;
   transition: 0.2s ease-in;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 .blackButton,
