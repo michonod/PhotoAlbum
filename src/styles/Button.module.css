@@ -1,0 +1,20 @@
+.button {
+  font-size: 14px;
+  padding: 6px;
+  text-transform: uppercase;
+  font-weight: 900;
+  transition: 0.2s ease-in;
+  border: 2px solid black;
+}
+
+.blackButton,
+.whiteButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.whiteButton,
+.blackButton:hover {
+  background-color: white;
+  color: black;
+}

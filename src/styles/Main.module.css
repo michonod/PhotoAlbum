@@ -41,14 +41,3 @@
   color: grey;
   letter-spacing: 0.32px;
 }
-
-.button {
-  font-size: 14px;
-  background-color: black;
-  color: white;
-  padding: 6px;
-  text-transform: uppercase;
-  font-weight: 900;
-  width: 140px;
-  margin: 40px auto;
-}

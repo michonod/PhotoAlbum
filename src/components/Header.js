@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import styles from "../styles/Header.module.css";
 import logo from "../assets/svg/headerLogo.svg";
 import Dropdown from "./Dropdown";
+import Button from "./Button";
 
 const Header = ({ children, loggedIn }) => {
-  const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
+  // const dropdownHandler = () => setVisible((prevState) => !prevState);
+  // const buttonStyle = { pointerEvents: "none", borderColor: "white" };
 
-  const dropdownHandler = () => setVisible((prevState) => !prevState);
   return (
     <div>
       <div className={styles.container}>
         <img src={logo} alt="logo" className={styles.logo} />
-        {loggedIn && (
-          <button className={styles.dropdownButton} onClick={dropdownHandler}>
+        {/* {loggedIn && (
+          <Button onClick={dropdownHandler} color="black" style={buttonStyle}>
             My albums
-          </button>
+          </Button>
         )}
-        {visible && <Dropdown />}
+        {visible && <Dropdown />} */}
       </div>
       <div>{children}</div>
     </div>

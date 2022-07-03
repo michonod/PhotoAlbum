@@ -18,10 +18,8 @@
 
 .dropdownButton {
   border: 2px solid white;
-  font-size: 14px;
   text-transform: uppercase;
-  background-color: black;
-  color: white;
+
   font-weight: 900;
   padding: 6px 25px;
   position: absolute;

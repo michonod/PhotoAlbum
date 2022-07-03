@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "../styles/Main.module.css";
+import Button from "./Button";
 
 const Main = ({ formSubmit }) => {
+  const buttonStyle = { width: " 140px", margin: " 40px auto" };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Join our stock community!</h1>
@@ -13,9 +16,9 @@ const Main = ({ formSubmit }) => {
         <input type="text" placeholder="Enter username here ..." />
         <label htmlFor="password">Password</label>
         <input type="password" placeholder="Enter password here ..." />
-        <button type="submit" className={styles.button}>
+        <Button type="submit" color="black" style={buttonStyle}>
           Log in
-        </button>
+        </Button>
       </form>
     </div>
   );
