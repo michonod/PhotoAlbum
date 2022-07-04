@@ -3,7 +3,7 @@ import styles from "../styles/Modal.module.css";
 import Button from "./Button";
 import completeIcon from "../assets/svg/completeIcon.svg";
 
-const Modal = () => {
+const Modal = ({ onCancel, onSave }) => {
   const buttonStyle = { border: "none", pointerEvents: "none", padding: "0px" };
   const [focused, setFocused] = useState(false);
 
@@ -29,10 +29,10 @@ const Modal = () => {
           />
         )}
         <div className={styles.buttonsBottom}>
-          <Button color="white" style={{ width: "140px" }}>
+          <Button color="white" style={{ width: "140px" }} onClick={onCancel}>
             Cancel
           </Button>
-          <Button color="black" style={{ width: "140px" }}>
+          <Button color="black" style={{ width: "140px" }} onSave={onSave}>
             Save
           </Button>
         </div>
