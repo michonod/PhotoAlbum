@@ -15,29 +15,3 @@
   justify-content: center;
   color: white;
 }
-
-.dropdownButton {
-  border: 2px solid white;
-  text-transform: uppercase;
-
-  font-weight: 900;
-  padding: 6px 25px;
-  position: absolute;
-  right: 300px;
-}
-
-.dropdown {
-  display: flex;
-  list-style: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: white;
-  border: 2px solid black;
-  right: 300px;
-  top: 70px;
-  font-size: 14px;
-  padding: 6px 15px;
-  line-height: 18px;
-}

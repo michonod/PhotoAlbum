@@ -8,7 +8,7 @@ import { saveAs } from "file-saver";
 
 const ImageDetails = () => {
   let { id } = useParams();
-  const data = useContext(UserContext);
+  const { data } = useContext(UserContext);
   const [visible, setVisible] = useState(false);
   const findImage = data.find((item) => item.id === id);
 
@@ -22,7 +22,7 @@ const ImageDetails = () => {
 
   return (
     <div className={styles.container}>
-      {visible && <Modal onCancel={hideModal} />}
+      {visible && <Modal selectedImage={findImage} onCancel={hideModal} />}
       <>
         <div className={styles.buttons}>
           <Button

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h2 {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.container p {
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #9d9d9d;
+}
+
+.album {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.album div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin: 70px 0px;
+}

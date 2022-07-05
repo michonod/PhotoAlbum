@@ -20,7 +20,12 @@ const ImagesPage = () => {
       {data.map((item) => (
         <div className={classes.item} key={item.id}>
           <Link to={item.id}>
-            <ImageCard src={item.download_url} alt={item.author} />
+            <ImageCard
+              src={item.download_url}
+              alt={item.author}
+              text="Add to album"
+              color="black"
+            />
           </Link>
         </div>
       ))}

@@ -7,10 +7,18 @@ import ImageDetails from "./components/ImageDetails";
 import { UserContext } from "./helpers/UserContext";
 import { useEffect, useState } from "react";
 import { getImagesData } from "./helpers/getImagesData";
+import Album from "./components/Album";
+import { getDate } from "./helpers/getDate";
+import { v4 } from "uuid";
 
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [albums, setAlbums] = useState([
+    { name: "My album one", photos: [], date: getDate, id: v4() },
+  ]);
+
+  console.log(albums);
 
   useEffect(() => {
     setLoading(true);
@@ -22,10 +30,12 @@ function App() {
     setLoading(false);
   }, []);
 
+  const values = { data, albums, setAlbums };
+
   return (
-    <UserContext.Provider value={data}>
-      <Header>
-        <Router>
+    <UserContext.Provider value={values}>
+      <Router>
+        <Header>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -36,9 +46,10 @@ function App() {
               path="/images/:id"
               element={loading ? <h1>Loading...</h1> : <ImageDetails />}
             />
+            <Route path="/album/:id" element={<Album />} />
           </Routes>
-        </Router>
-      </Header>
+        </Header>
+      </Router>
     </UserContext.Provider>
   );
 }
