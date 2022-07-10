@@ -5,8 +5,9 @@ import completeIcon from "../assets/svg/completeIcon.svg";
 import { UserContext } from "../helpers/UserContext";
 import { getDate } from "../helpers/getDate";
 import { v4 } from "uuid";
+import Notification from "./Notification";
 
-const Modal = ({ onCancel, onSave, selectedImage }) => {
+const Modal = ({ onCancel, onSave, selectedImage, notificationHandler }) => {
   const { setAlbums, albums } = useContext(UserContext);
 
   const buttonStyle = {
@@ -25,18 +26,18 @@ const Modal = ({ onCancel, onSave, selectedImage }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    if (value.length) {
-      setAlbums((state) => [
-        ...state,
-        {
-          name: value,
-          photos: [selectedImage.download_url],
-          date: getDate,
-          id: v4(),
-        },
-      ]);
-    }
+    setAlbums((state) => [
+      ...state,
+      {
+        name: value.length ? value : "No name album",
+        photos: [selectedImage.download_url],
+        date: getDate,
+        id: v4(),
+      },
+    ]);
+
     onCancel();
+    notificationHandler(true);
   };
   const changeInputHandler = (event) => {
     setValue(event.target.value);
@@ -52,6 +53,7 @@ const Modal = ({ onCancel, onSave, selectedImage }) => {
       setAlbums((state) => [...state, { ...updatedAlbums }]);
     }
     onCancel();
+    notificationHandler(true);
   };
 
   return (

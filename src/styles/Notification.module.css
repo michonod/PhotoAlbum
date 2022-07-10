@@ -1,0 +1,16 @@
+.container {
+  height: 180px;
+  width: 100%;
+  background: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h4 {
+  color: white;
+  font-size: 32px;
+}

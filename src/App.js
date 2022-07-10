@@ -16,6 +16,7 @@ function App() {
   const [albums, setAlbums] = useState([
     { name: "My album one", photos: [], date: getDate, id: v4() },
   ]);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   console.log(albums);
 
@@ -29,7 +30,7 @@ function App() {
     setLoading(false);
   }, []);
 
-  const values = { data, albums, setAlbums };
+  const values = { data, albums, setAlbums, showDropdown, setShowDropdown };
 
   return (
     <UserContext.Provider value={values}>
